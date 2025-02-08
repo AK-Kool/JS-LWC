@@ -1,0 +1,49 @@
+<template>
+    <div class="grid-container">
+        <div class="grid-item">
+            <template for:each={emailList} for:item="row">
+                <div class="item-content" key={row.id}>
+                    <!-- Combobox -->
+                    <lightning-combobox
+                        data-row-id={row.id}
+                        class="combobox"
+                        placeholder="Select an option"
+                        options={options}
+                        onchange={handleComboboxChange}>
+                    </lightning-combobox>
+    
+                    <!-- Input Box -->
+                    <div class="input-container">
+                        <lightning-input
+                            data-row-id={row.id}
+                            class="input-box"
+                            type="email"
+                            label=""
+                            placeholder="Enter email"
+                            onchange={handleInputChange}
+                            onblur={handleBlur}>
+                        </lightning-input>
+                    </div>
+    
+                    <!-- Delete Icon Button -->
+                    <lightning-button-icon
+                        data-row-id={row.id}
+                        class="delete-button"
+                        icon-name="utility:delete"
+                        alternative-text="Delete"
+                        onclick={handleDeleteClick}>
+                    </lightning-button-icon>
+                </div>
+            </template>
+            <button class="slds-button no-focus-outline" onclick={handleNewEmailAddress}>
+                <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                    <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#add"></use>
+                </svg>
+                Add Email Address
+            </button>
+        </div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+    </div>
+</template>

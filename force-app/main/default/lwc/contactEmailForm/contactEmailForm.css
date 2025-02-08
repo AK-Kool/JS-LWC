@@ -1,0 +1,44 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+    grid-gap: 10px; /* Space between grid items */
+    height: 50vh; /* Takes up half of the viewport height */
+    width: 100%; /* Takes up full width */
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.item-content {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 10px; /* Space between elements */
+}
+
+.combobox, .input-container {
+    flex: 1; /* Allow combobox and input to grow and share space */
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align input to the top */
+}
+
+.delete-button {
+    flex-shrink: 0; /* Prevent the button from shrinking */
+    margin-top: 20px; /* Adjust margin to align with input */
+}
+
+.no-focus-outline:focus {
+    outline: none !important;
+    box-shadow: none !important; /* Remove SLDS box-shadow */
+}
+
+/* Optional: Add a custom focus indicator */
+.no-focus-outline:focus-visible {
+    box-shadow: 0 0 0 2px #0176d3; /* Custom focus indicator */
+}
